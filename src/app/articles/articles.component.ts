@@ -16,6 +16,7 @@ export class ArticlesComponent implements OnInit {
 tab_art: Article[];
 categ !: Categorie
 id: any ; 
+zeroStyle = {'color':'red'}
 
 constructor (private articleService: ArticleService , private activatedRout: ActivatedRoute){
   this.tab_art = articleService.listeArticles();

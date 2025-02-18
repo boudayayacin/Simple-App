@@ -22,14 +22,20 @@ export class AddArticleComponent implements OnInit {
   constructor(private articleService: ArticleService , private router: Router) {}
 
   addArticle() {
-    // this.newCateg = //code à completer
-    // this.newArticle.categ = this.newCateg
+
+    const exist = this.articleService.consulterCategorie(this.newCodec) 
+    if(!exist){
+      console.log("n'exist");
+      return ;
+    }
+    this.newCateg = exist
+    this.newArticle.categ = this.newCateg
     this.articleService.ajouterArticle(this.newArticle);
     console.log(this.newArticle);
     this.router.navigate(['articles']);
+
   }
   
-
   ngOnInit(): void {
     this.categories =  this.articleService.listerCategories();
     console.log(this.categories);

@@ -14,7 +14,7 @@ constructor() {
   {codec : 3, nomCat : "Smartphone", description:"Toutes les marques de téléphones"}
   ];
   this.tab_art = [
-    {codea : 1, libelle : "Souris Wifi", prix : 39.100, qte : 8, dateAjout : new Date("09/27/2022"),
+    {codea : 1, libelle : "Souris Wifi", prix : 39.100, qte : 0, dateAjout : new Date("09/27/2022"),
     categ:{codec : 1, nomCat : "Périphérique PC", description:"Périphériques d'entrée/sortie pour les PCs"}
     },
     {codea : 2, libelle : "Clavier Gaming",
@@ -59,7 +59,8 @@ ajouterArticle(art: Article){
   listerCategories(){
     return this.categories ;
   }
-  consulterCategorie(id: any) {
-    return this.tab_art.find(article => article.categ.codec === id);
+  consulterCategorie(id: any){
+    return this.categories.find(cat => cat.codec === Number(id));
   }
+  
 }
