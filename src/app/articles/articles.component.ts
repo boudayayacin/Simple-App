@@ -3,12 +3,14 @@ import { Article } from '../model/articl.model';
 import { ArticleService } from '../services/article.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Categorie } from '../model/categorie.model';
+import { MenuComponent } from '../menu/menu.component';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-articles',
-  imports: [FormsModule , CommonModule],
+  imports: [FormsModule , CommonModule , MenuComponent],
   templateUrl: './articles.component.html',
   styleUrl: './articles.component.css'
 })
@@ -18,7 +20,7 @@ categ !: Categorie
 id: any ; 
 zeroStyle = {'color':'red'}
 
-constructor (private articleService: ArticleService , private activatedRout: ActivatedRoute){
+constructor (private articleService: ArticleService , private activatedRout: ActivatedRoute , public authServ : AuthService){
   this.tab_art = articleService.listeArticles();
 }
 suppArticle(art: Article){

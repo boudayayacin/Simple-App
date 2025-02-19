@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from '../model/articl.model';
 import { ArticleService } from '../services/article.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule, RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'app-update-article',
   standalone: true ,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, MenuComponent],
   templateUrl: './update-article.component.html',
   styleUrl: './update-article.component.css'
 })

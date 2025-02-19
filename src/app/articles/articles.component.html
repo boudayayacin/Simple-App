@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <div class="container">
     <div class="card shadow mb-4">
     <div class="card-body">
@@ -12,7 +13,7 @@
     <th>Quantité</th>
     <th>Date insertion</th>
     <th>Approvisionner</th>
-    <th>Action</th>
+    <th *ngIf="authServ.testerAdmin()">Action</th>
     </tr>
     </thead>
     <tbody *ngFor="let article of tab_art">
@@ -27,7 +28,7 @@
         <span *ngIf="article.qte === 0">OUI</span>
         <span *ngIf="article.qte > 0">NON</span>
       </td>
-    <td>
+    <td *ngIf="authServ.testerAdmin()">
         <a class="btn btn-danger m-2" (click)="suppArticle(article)">Supprimer</a>
         <a href="/update-article" class="btn btn-warning">Modifier</a>
     </td>

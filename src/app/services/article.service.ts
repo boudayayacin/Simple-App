@@ -63,4 +63,18 @@ ajouterArticle(art: Article){
     return this.categories.find(cat => cat.codec === Number(id));
   }
   
+  calculNbArticles(): number{
+    return this.tab_art.length;
+    }
+    calculTotalStock(): number{
+    let tot=0;
+    this.tab_art.forEach( (art) => {
+    tot += art.prix! * art.qte!;
+    })
+    return tot;
+    }
+    calculNbCategories(): number{
+    return this.categories.length;
+    }
+  
 }

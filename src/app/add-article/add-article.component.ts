@@ -5,10 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Categorie } from '../model/categorie.model';
 import { CommonModule } from '@angular/common';
+import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'app-add-article',
-  imports: [FormsModule , CommonModule],
+  imports: [FormsModule , CommonModule , MenuComponent],
   templateUrl: './add-article.component.html',
   styleUrls: ['./add-article.component.css']
 })
